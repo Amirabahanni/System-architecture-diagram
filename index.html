@@ -1,200 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vision System Architecture</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .architecture-container {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            max-width: 1000px;
-            width: 100%;
-        }
-        
-        .title {
-            text-align: center;
-            font-size: 28px;
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 40px;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 15px;
-        }
-        
-        .layer {
-            margin: 25px 0;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            position: relative;
-        }
-        
-        .presentation-layer {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            color: white;
-        }
-        
-        .business-layer {
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            color: white;
-        }
-        
-        .data-layer {
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            color: white;
-        }
-        
-        .layer-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .components {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .component {
-            background: rgba(255,255,255,0.2);
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-        
-        .component-title {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-        
-        .component-desc {
-            font-size: 13px;
-            opacity: 0.9;
-        }
-        
-        .arrows {
-            text-align: center;
-            font-size: 24px;
-            color: #7f8c8d;
-            margin: 10px 0;
-        }
-        
-        .security-badge {
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            background: #e74c3c;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vision System Architecture</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 10px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .architecture-container {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 1200px;
+      transform: scale(0.85);
+      transform-origin: top;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .layer {
+      margin: 10px 0;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .presentation-layer {
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: white;
+    }
+
+    .business-layer {
+      background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+      color: white;
+    }
+
+    .data-layer {
+      background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+      color: white;
+    }
+
+    .layer-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .components {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .component {
+      background: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.3);
+      font-size: 12px;
+    }
+
+    .component-title {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .component-desc {
+      font-size: 11px;
+      opacity: 0.9;
+    }
+
+    .arrows {
+      text-align: center;
+      font-size: 18px;
+      color: #7f8c8d;
+      margin: 5px 0;
+    }
+
+    .security-badge {
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      background: #e74c3c;
+      color: white;
+      padding: 3px 10px;
+      border-radius: 15px;
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 8px;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <div class="architecture-container">
-        <div class="title">Vision Platform - System Architecture</div>
-        
-        <!-- Presentation Layer -->
-        <div class="layer presentation-layer">
-            <div class="security-badge">🔒 Secure UI</div>
-            <div class="layer-title">📱 Presentation Layer</div>
-            <div class="components">
-                <div class="component">
-                    <div class="component-title">React Frontend</div>
-                    <div class="component-desc">Modern UI with hooks and components</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Material UI</div>
-                    <div class="component-desc">Professional design system</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Recharts</div>
-                    <div class="component-desc">Interactive data visualizations</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Chat Interface</div>
-                    <div class="component-desc">Natural language interaction</div>
-                </div>
-            </div>
+  <div class="architecture-container">
+    <div class="title">Vision Platform - System Architecture</div>
+
+    <!-- Presentation Layer -->
+    <div class="layer presentation-layer">
+      <div class="security-badge">🔒 Secure UI</div>
+      <div class="layer-title">📱 Presentation Layer</div>
+      <div class="components">
+        <div class="component">
+          <div class="component-title">React Frontend</div>
+          <div class="component-desc">Modern UI with hooks</div>
         </div>
-        
-        <div class="arrows">⬇️ Secure Communication ⬇️</div>
-        
-        <!-- Business Layer -->
-        <div class="layer business-layer">
-            <div class="security-badge">🤖 Local AI</div>
-            <div class="layer-title">⚙️ Business Logic Layer</div>
-            <div class="components">
-                <div class="component">
-                    <div class="component-title">Data Import Service</div>
-                    <div class="component-desc">CSV/Excel processing</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Analysis Engine</div>
-                    <div class="component-desc">Statistical computations</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Ollama AI Service</div>
-                    <div class="component-desc">Local language models</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Visualization Service</div>
-                    <div class="component-desc">Chart generation</div>
-                </div>
-            </div>
+        <div class="component">
+          <div class="component-title">Material UI</div>
+          <div class="component-desc">Design system</div>
         </div>
-        
-        <div class="arrows">⬇️ Local Storage Only ⬇️</div>
-        
-        <!-- Data Layer -->
-        <div class="layer data-layer">
-            <div class="security-badge">💾 Offline</div>
-            <div class="layer-title">🗄️ Data Storage Layer</div>
-            <div class="components">
-                <div class="component">
-                    <div class="component-title">File System</div>
-                    <div class="component-desc">Original files (CSV, Excel)</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">In-Memory Cache</div>
-                    <div class="component-desc">Active dataset processing</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">LocalStorage</div>
-                    <div class="component-desc">App settings & preferences</div>
-                </div>
-                <div class="component">
-                    <div class="component-title">Ollama Models</div>
-                    <div class="component-desc">Local AI model storage</div>
-                </div>
-            </div>
+        <div class="component">
+          <div class="component-title">Recharts</div>
+          <div class="component-desc">Data visualizations</div>
         </div>
-        
-        <div style="text-align: center; margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
-            <strong>🔐 Security Features:</strong> 100% Offline • No External APIs • Local AI Processing • Banking-Grade Privacy
+        <div class="component">
+          <div class="component-title">Chat Interface</div>
+          <div class="component-desc">NL interaction</div>
         </div>
+      </div>
     </div>
+
+    <div class="arrows">⬇️ Secure Communication ⬇️</div>
+
+    <!-- Business Layer -->
+    <div class="layer business-layer">
+      <div class="security-badge">🤖 Local AI</div>
+      <div class="layer-title">⚙️ Business Logic Layer</div>
+      <div class="components">
+        <div class="component">
+          <div class="component-title">Data Import</div>
+          <div class="component-desc">CSV/Excel parsing</div>
+        </div>
+        <div class="component">
+          <div class="component-title">Analysis Engine</div>
+          <div class="component-desc">Stats computation</div>
+        </div>
+        <div class="component">
+          <div class="component-title">Ollama AI</div>
+          <div class="component-desc">Local models</div>
+        </div>
+        <div class="component">
+          <div class="component-title">Visualization</div>
+          <div class="component-desc">Charting</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrows">⬇️ Local Storage Only ⬇️</div>
+
+    <!-- Data Layer -->
+    <div class="layer data-layer">
+      <div class="security-badge">💾 Offline</div>
+      <div class="layer-title">🗄️ Data Storage Layer</div>
+      <div class="components">
+        <div class="component">
+          <div class="component-title">File System</div>
+          <div class="component-desc">CSV/Excel</div>
+        </div>
+        <div class="component">
+          <div class="component-title">In-Memory Cache</div>
+          <div class="component-desc">Active data</div>
+        </div>
+        <div class="component">
+          <div class="component-title">LocalStorage</div>
+          <div class="component-desc">App settings</div>
+        </div>
+        <div class="component">
+          <div class="component-title">Ollama Models</div>
+          <div class="component-desc">AI storage</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      🔐 100% Offline • No External APIs • Local AI • Banking-Grade Privacy
+    </div>
+  </div>
 </body>
 </html>
